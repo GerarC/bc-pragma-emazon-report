@@ -1,0 +1,37 @@
+spring:
+    mvc:
+        log-request-details: true
+
+    data:
+        mongodb:
+            port: ${MONGO_PORT:27017}
+            host: ${MONGO_SERVICE_HOST:localhost}
+            username: ${MONGO_USERNAME:user}
+            password: ${MONGO_PASSWORD:password}
+            database: ${MONGO_DATABASE_NAME:emazon_report}
+            authentication-database: ${MONGO_AUTH_DATABASE:admin}
+
+            repositories:
+                type: auto
+            auto-index-creation: true
+
+
+logging:
+    level:
+        web: trace
+        org:
+            springframework:
+                web: trace
+
+server:
+    port: 8094
+    servlet:
+        context-path: ${EMAZON_REPORT_CONTEXT_PATH:/emazon/report}
+
+allowed-origins:
+    http://localhost:3000/,
+    *,
+
+emazon:
+    user:
+        base-url: localhost:8090/emazon/user

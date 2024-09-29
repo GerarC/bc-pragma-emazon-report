@@ -1,0 +1,9 @@
+spring:
+    application:
+        name: report
+    profiles:
+        active: local
+
+app:
+    description: "Emazon's Report Microservice API"
+    version: "0.0.1"
